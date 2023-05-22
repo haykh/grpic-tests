@@ -1,0 +1,49 @@
+[simulation]
+title   = "ks/411_eps1e-2_dt1e-2"
+runtime = 10000.0
+
+[domain]
+a           = 0.0
+sph_rabsorb = 95.0
+resolution  = [128, 128]
+extent      = [0.9, 100.0]
+boundaries  = [["OPEN", "ABSORB"], ["AXIS"]]
+
+[algorithm]
+dt                = 0.01
+fieldsolver_ON    = false
+gr_pusher_epsilon = 1e-6
+gr_pusher_niter   = 10
+
+[units]
+ppc0       = 4.0
+larmor0    = 2e-3
+skindepth0 = 0.1
+
+[particles]
+n_species = 1
+
+[species_1]
+label    = "e-"
+mass     = 1.0
+charge   = -1.0
+maxnpart = 1e2
+
+[output]
+fields        = []
+particles     = ["X", "U"]
+format        = "HDF5"
+interval_time = 1.0
+
+[problem]
+r0   = [68.600387032258]
+th0  = [1.570796326795]
+ph0  = [0.000000000000]
+ur0  = [0.029636644590]
+uth0 = [0.000000000000]
+uph0 = [3.900000000000]
+
+[diagnostics]
+interval        = 10
+log_level       = "ERROR"
+blocking_timers = false
