@@ -12,7 +12,7 @@ boundaries  = [["OPEN", "ABSORB"], ["AXIS"]]
 [algorithm]
 dt                = 0.01
 fieldsolver_ON    = false
-gr_pusher_epsilon = 1e-6
+gr_pusher_epsilon = 1e-2
 gr_pusher_niter   = 10
 
 [units]
